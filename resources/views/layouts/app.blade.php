@@ -10,7 +10,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
 
-
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>

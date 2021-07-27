@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                 <h2>Witaj: {{Auth::user()->name}}</h2>
+                        <h3><a href="{{route('debts.list')}}">Lista długów</a></h3>
                 </div>
             </div>
         </div>
