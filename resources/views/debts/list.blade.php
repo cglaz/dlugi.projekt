@@ -13,21 +13,23 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Nazwa</th>
-                                        <th>Miasto:</th>
+                                        <th>Miasto</th>
                                         <th>Cena</th>
                                         <th>Opcje</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($debts ?? [] as $debt)
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td>{{ $debt->id }}</td>
+                                            <td>{{ $debt->name }}</td>
+                                            <td>{{ $debt->city }}</td>
+                                            <td>{{ $debt->price }} PLN</td>
                                             <td>
                                                 <a href="">Usuń</a>
                                             </td>
                                         </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Debt;
 use Illuminate\Http\Request;
 
 class DebtController extends Controller
 {
+
     public function list()
     {
-        return view('debts.list');
+        $debts = Debt::orderBy('created_at')->get();
+
+
+        return view('debts.list', ['debts' => $debts]);
     }
 
     public function create()
