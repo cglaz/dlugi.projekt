@@ -29,9 +29,21 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
+                    @if(Auth::user())
+
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('debts.list') }}">Lista długów <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('debts.create') }}">Dodaj dług <span class="sr-only">(current)</span></a>
+                            </li>
+                        </ul>
+
+                    @endif
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,8 +26,18 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
 
 Route::group([
     'prefix' => 'debts',
+    'namespace' => 'Debts',
     'as' => 'debts.',
 ], function() {
     Route::get('list', [App\Http\Controllers\DebtController::class, 'list'])
         ->name('list');
+
+    Route::delete('delete/{debtId}', [App\Http\Controllers\DebtController::class, 'delete'])
+        ->name('delete');
+
+    Route::get('create', [App\Http\Controllers\DebtController::class, 'create'])
+        ->name('create');
+
+    Route::post('store', [App\Http\Controllers\DebtController::class, 'store'])
+        ->name('store');
 });
