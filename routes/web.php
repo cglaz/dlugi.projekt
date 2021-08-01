@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',['middleware' => 'guest', function () {
+Route::get('/', function () {
     return view('auth.login');
-}]);
+})->middleware('guest');
 
 Auth::routes();
 
