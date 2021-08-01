@@ -7,7 +7,7 @@
 ## Database
 This project uses MySQL database.
 
-##Technology
+## Technology
 1.PHP 8
 2.Laravel 8.4
 3.Bootstrap
